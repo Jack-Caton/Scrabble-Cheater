@@ -13,17 +13,6 @@ Do whatever you want with it.
 import os.path
 
 
-def anagrams(word):
-    """ Generate all of the anagrams of a word. """
-    if len(word) < 2:
-        yield word
-    else:
-        for i, letter in enumerate(word):
-            if letter not in word[:i]:    # Avoid duplicating earlier words
-                for j in anagrams(word[:i]+word[i+1:]):
-                    yield j + letter
-
-
 # Standard Scrabble scores
 scores = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2,
           "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3,
